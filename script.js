@@ -14,5 +14,5 @@ function clearCanvas() {
 
 function credits() {
   swal("Licences and credits",
-"Developer: Zobos \n Icons by Icons8 (Not in use!) \n https://icons8.com/web-app/22263/Erase");
+"Developer: Zobos \n Icon pack by Freepik: www.flaticon.com/packs/general-ui ");
 }
