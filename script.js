@@ -1,7 +1,34 @@
-var penColour = 'black';
+var penColour = 'white';
+var tempColour = 'black';
+var mouseDownvar = false;
+//fillBG();
+//penColour = 'black'
+
+function load() {
+  fillBG();
+  penColour = 'black';
+  console.log("Loaded.");
+}
 
 function setPixelColor(pixel) {
   pixel.style.backgroundColor = penColour;
+}
+
+function mouseDrag(pixel) {
+  //console.log("Working");
+  if (mouseDownvar == true) {
+    setPixelColor(pixel);
+  }
+}
+
+function mouseUp() {
+  //console.log("Up");
+  mouseDownvar = false;
+}
+
+function mouseDown() {
+  //console.log("Down");
+  mouseDownvar = true;
 }
 
 function setPenColour(pen) {
@@ -12,6 +39,7 @@ function clearCanvas() {
   //location.reload();
   setPenColour('white');
   fillBG();
+  setPenColour('black');
 }
 
 function credits() {
@@ -29,7 +57,10 @@ function fillRandom() {
 function fillBG() {
   $.each( $("[class*='pixel']"), function( key, pixel ) {
     setPixelColor(pixel);
+    pixel.draggable = false;
+
   });
+  $('#art').attr('draggable', false);
 }
 
 function getRandomColor() {
