@@ -14,3 +14,7 @@ It is a simple pixel art editor that works on most devices.
 * More tools.
 * Exporting to PNG files.
 * Gallery to post your artwork.
+
+##More info:
+To get your image featured in the gallery email me:
+pixelart@thrusted.co.uk
