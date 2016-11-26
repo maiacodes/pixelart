@@ -1,6 +1,9 @@
 var penColour = 'white';
 var tempColour = 'black';
 var mouseDownvar = false;
+var galleryTitle = "Gallery!";
+var galleryHTML = "Gallery Error: 1";
+var galleryLink = "http://www.thrusted.co.uk/pixelart/gallery.html"
 //fillBG();
 //penColour = 'black'
 
@@ -70,4 +73,13 @@ function getRandomColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+function gallery() {
+
+  galleryTitle = "[Gallery]"
+  galleryHTML =
+  "<iframe src='" + galleryLink + "' width=900 height=400> </iframe>"
+
+  swal({title: galleryTitle,text: galleryHTML,html: true});
 }
