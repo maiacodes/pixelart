@@ -1,8 +1,8 @@
 # Pixelart by Zobos
 
-Click the following link to open my editor: http://www.thrusted.net/tools/pixelart/index.html
+Click the following link to open my editor: http://www.thrusted.net/tools/pixelart/index.html (its down)
 
-Click the following link to open my BETA editor: http://zobos.github.io/pixelart
+Click the following link to open my BETA editor: http://maiacodes.github.io/pixelart
 
 ##What does it do?
 It is a simple pixel art editor that works on most devices.
