@@ -5,6 +5,9 @@
   border: 5px solid black;
   draggable: false;
   cursor:crosshair;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 540px;
 }
 
 .row {
@@ -15,9 +18,14 @@
 .pixel {
   display: table-cell;
   background: white;
-  width: 30px;
-  height: 30px;
   draggable: false;
+}
+
+/* make height proportional to width */
+.pixel:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
 }
 
 .pen {
