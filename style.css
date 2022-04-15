@@ -34,8 +34,8 @@
 }
 
 .logo {
-  width: 450px;
-  height: 106px;
+  max-width: 100%;
+  height: auto;
 }
 
 .toolpanel {
@@ -43,5 +43,5 @@
 }
 
 .sweet-alert {
-       width:  950px;
+   width:  950px;
 }
