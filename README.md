@@ -1,13 +1,12 @@
-# Pixelart by Zobos
+# Pixelart
 
-Click the following link to open my editor: http://www.thrusted.net/tools/pixelart/index.html (its down)
+This was one of the first web apps I developed, over 6 years ago!
+Click the following link to open the editor: https://pixelart.maia.codes
 
-Click the following link to open my BETA editor: http://maiacodes.github.io/pixelart
-
-##What does it do?
+## What does it do?
 It is a simple pixel art editor that works on most devices.
 
-##Features
+## Features
 * Colouring.
 * Simple layout.
 * Basic tools.
@@ -16,7 +15,3 @@ It is a simple pixel art editor that works on most devices.
 * More tools.
 * Exporting to PNG files.
 * Gallery to post your artwork.
-
-##More info:
-To get your image featured in the gallery email me:
-admin@thrusted.net
