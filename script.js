@@ -1,11 +1,14 @@
-var penColour = 'white';
-var tempColour = 'black';
-var mouseDownvar = false;
-var galleryTitle = "Gallery!";
-var galleryHTML = "Gallery Error: 1";
-var galleryLink = "http://www.thrusted.co.uk/pixelart/gallery.html"
-//fillBG();
-//penColour = 'black'
+const GALLERY_TITLE = "Gallery!";
+const GALLERY_HTML = "Gallery Error: 1";
+const GALLERY_LINK = "http://www.thrusted.co.uk/pixelart/gallery.html"
+const COLOR_LETTERS = '0123456789ABCDEF';
+
+const $art = $('#art');
+const $pixels = $('.pixel');
+
+let penColour = 'white';
+let tempColour = 'black';
+let isMouseDown = false;
 
 function load() {
   fillBG();
@@ -13,29 +16,29 @@ function load() {
   console.log("Loaded.");
 }
 
-function setPixelColor(pixel) {
-  pixel.style.backgroundColor = penColour;
+function setPixelColor() {
+  this.style.backgroundColor = penColour;
 }
 
-function mouseDrag(pixel) {
+function mouseDrag() {
   //console.log("Working");
-  if (mouseDownvar == true) {
-    setPixelColor(pixel);
+  if (isMouseDown) {
+    setPixelColor(this);
   }
 }
 
 function mouseUp() {
   //console.log("Up");
-  mouseDownvar = false;
+  isMouseDown = false;
 }
 
 function mouseDown() {
   //console.log("Down");
-  mouseDownvar = true;
+  isMouseDown = true;
 }
 
 function setPenColour(pen) {
- penColour = pen;
+  penColour = pen;
 }
 
 function clearCanvas() {
@@ -51,35 +54,40 @@ function credits() {
 }
 
 function fillRandom() {
-  $.each( $("[class*='pixel']"), function( key, pixel ) {
-    setPenColour( getRandomColor() );
-    setPixelColor(pixel);
+  $pixels.each(function() {
+    setPenColour(getRandomColor());
+    setPixelColor.bind(this)();
   });
 }
 
 function fillBG() {
-  $.each( $("[class*='pixel']"), function( key, pixel ) {
-    setPixelColor(pixel);
-    pixel.draggable = false;
-
+  $pixels.each(function() {
+    setPixelColor.bind(this)();
+    this.draggable = false;
   });
-  $('#art').attr('draggable', false);
+  $art.attr('draggable', false);
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+  let color = ['#'];
+  for (let i = 0; i < 6; i++) {
+    color.push(COLOR_LETTERS[(Math.random() * 16) | 0]); // | 0 rounds number to floor (faster)
+  }
+  return color.join(''); // join is faster than concatenation with "+"
 }
 
 function gallery() {
+  GALLERY_TITLE = "[Gallery]"
+  GALLERY_HTML =
+    "<iframe src='" + GALLERY_LINK + "' width=900 height=400> </iframe>"
 
-  galleryTitle = "[Gallery]"
-  galleryHTML =
-  "<iframe src='" + galleryLink + "' width=900 height=400> </iframe>"
-
-  swal({title: galleryTitle,text: galleryHTML,html: true});
+  swal({title: GALLERY_TITLE,text: GALLERY_HTML,html: true});
 }
+
+$art.on('mouseup', mouseUp);
+$art.on('mousedown', mouseDown);
+
+$pixels.on('click', setPixelColor);
+$pixels.on('mouseover', mouseDrag);
+
+$(load);
